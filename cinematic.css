@@ -1,0 +1,85 @@
+/* Locally bundled GSAP: cinematic, section-specific motion and readability refinements. */
+:root{--cin-ink:#17342d;--cin-muted:#65756d;--cin-paper:#f4f2ec;--cin-line:rgba(23,52,45,.14);--cin-gold:#b9955c}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-size:16px}
+.nav nav a,.nav-cta,.button,.filter,.under-link{font-size:14px}
+.section-kicker{letter-spacing:.08em}
+.section-kicker .english{font-size:11px}
+.eyebrow,.data-note,.geometry-pending,.source-caption,.row-origin,.record-count small,.contact-details small,.form-feedback{font-size:13px;line-height:1.8}
+.section-thread{opacity:.8}
+.land-reveal,.location-journey,.explorer,.futures,.investment-editorial,.developer-section,.closing-inquiry{isolation:isolate}
+.land-reveal{padding-block:clamp(86px,10vw,148px)}
+.land-reveal .reveal-heading{max-width:720px}
+.land-reveal .reveal-heading h2,.location-heading h2,.explorer-heading h2,.future-heading h2,.developer-heading h2{line-height:1.28;text-wrap:balance}
+.land-reveal .reveal-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--cin-line);border:1px solid var(--cin-line);margin-top:clamp(34px,5vw,72px)}
+.land-reveal .reveal-facts>*{background:var(--cin-paper);padding:clamp(20px,3vw,36px)}
+.land-reveal-frame{overflow:hidden;border:1px solid rgba(23,52,45,.16);background:#e8e5dd}
+.land-reveal-frame img{display:block;width:100%;height:auto;object-fit:contain}
+.location-journey{padding-block:clamp(80px,10vw,140px)}
+.location-heading{max-width:620px}
+.geo-stage{border:1px solid rgba(255,255,255,.2);background:#172f29;overflow:hidden}
+.geo-stage img{width:100%;height:auto;max-height:76vh;object-fit:contain;display:block}
+.explorer{padding-block:clamp(82px,10vw,144px)}
+.explorer-topline,.explorer-heading{max-width:800px}
+.explorer-shell{gap:clamp(24px,4vw,64px)}
+.parcel-panel{padding:clamp(22px,3vw,38px);border:1px solid var(--cin-line);box-shadow:0 24px 70px rgba(16,43,37,.07)}
+.parcel-panel h3{font-size:clamp(21px,2vw,28px)}
+.parcel-card{padding-block:24px}
+.parcel-number strong{font-size:clamp(38px,5vw,58px)}
+.parcel-facts small,.parcel-value>span{font-size:13px}
+.parcel-facts b,.parcel-value strong{font-size:clamp(16px,1.5vw,20px)}
+.filter{min-height:44px;padding-inline:18px}
+.data-note,.geometry-pending{max-width:48ch}
+.futures{padding-block:clamp(82px,10vw,144px)}
+.future-stage{gap:clamp(28px,5vw,72px)}
+.future-copy p,.investment-editorial p,.developer-section p,.closing-copy>p{font-size:clamp(16px,1.2vw,19px);line-height:1.9}
+.future-window{overflow:hidden}
+.future-image{will-change:clip-path,transform}
+.investment-editorial{padding-block:clamp(84px,11vw,152px)}
+.investment-total strong{font-variant-numeric:tabular-nums;letter-spacing:-.045em}
+.mix-meter{overflow:hidden}
+.developer-section{padding-block:clamp(78px,9vw,128px)}
+.developer-composition{border-top:1px solid var(--cin-line);border-bottom:1px solid var(--cin-line);padding-block:clamp(32px,5vw,66px)}
+.developer-composition img{max-width:min(100%,420px);height:auto}
+.faq-section{padding-block:clamp(76px,9vw,124px)}
+.faq-section details{border-bottom:1px solid var(--cin-line)}
+.faq-section summary{font-size:clamp(17px,1.5vw,21px);line-height:1.65;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer}
+.faq-section details>p{font-size:16px;line-height:1.95;max-width:72ch;padding:0 0 22px}
+.faq-section summary:focus-visible,.nav a:focus-visible,.button:focus-visible,.filter:focus-visible,.footer-top:focus-visible{outline:2px solid var(--cin-gold);outline-offset:4px}
+.closing-layout{gap:clamp(32px,6vw,90px)}
+.contact-form-panel{padding:clamp(24px,4vw,46px)}
+.contact-form-panel label{font-size:14px;line-height:1.8}
+.contact-form-panel input,.contact-form-panel textarea{font-size:16px;min-height:50px}
+.contact-form-panel textarea{min-height:112px}
+.contact-details{font-size:15px;line-height:1.9}
+.button span,.nav-cta span,.under-link span,.footer-top{transition:transform .32s cubic-bezier(.2,.7,.25,1)}
+.button:hover span,.nav-cta:hover span,.under-link:hover span{transform:translateX(-4px)}
+.faq-section summary::after{transition:transform .35s cubic-bezier(.2,.7,.25,1)}
+.faq-section details[open] summary::after{transform:rotate(45deg)}
+.gsap-fade-ready{will-change:transform,opacity}
+@media(max-width:900px){
+ .land-reveal .reveal-facts{grid-template-columns:1fr}
+ .land-reveal .reveal-facts>*{padding:22px 24px}
+ .explorer-shell{gap:26px}
+ .location-journey,.explorer,.futures,.investment-editorial{padding-block:76px}
+}
+@media(max-width:600px){
+ html{scroll-padding-top:72px}
+ body{font-size:16px}
+ .land-reveal,.location-journey,.explorer,.futures,.investment-editorial,.developer-section,.faq-section{padding-block:66px}
+ .eyebrow,.data-note,.geometry-pending,.source-caption,.row-origin,.record-count small,.contact-details small,.form-feedback{font-size:13px}
+ .land-reveal .reveal-facts{margin-top:28px}
+ .land-reveal-frame img,.geo-stage img{max-height:none;width:100%;height:auto;object-fit:contain}
+ .parcel-panel{padding:20px 18px}
+ .parcel-number strong{font-size:42px}
+ .parcel-facts{gap:12px}
+ .faq-section summary{min-height:72px;font-size:17px}
+ .faq-section details>p{font-size:15px}
+ .closing-layout{gap:28px}
+ .contact-form-panel{padding:22px 18px}
+ .contact-form-panel .form-row{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}

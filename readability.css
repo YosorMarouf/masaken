@@ -1,0 +1,132 @@
+/* Larger Arabic reading sizes, with compact English labels kept secondary. */
+.hero-copy{font-size:15px}
+.hero-quickfacts span{font-size:10px}
+.hero-bottom{font-size:10px}
+.hero-media-note{font-size:9px}
+.section-kicker{font-size:11px}
+.section-kicker .english{font-size:9px}
+.reveal-heading>p,.location-heading>p,.explorer-heading>p{font-size:14px;line-height:1.9}
+.land-reveal-frame figcaption,.geo-stage figcaption{font-size:10px}
+.frame-index,.geo-stamp{font-size:9px}
+.reveal-facts span{font-size:11px}
+.plan-topline,.pending,.plan-legend,.reference-plan>span{font-size:10px}
+.drawer-trigger{font-size:11px}
+.parcel-panel .eyebrow{font-size:10px}
+.panel-top h3{font-size:18px}
+.record-count small{font-size:10px}
+.filter{font-size:10px}
+.parcel-number small,.parcel-facts small,.row-origin,.type-chip,.parcel-value span{font-size:10px}
+.parcel-number strong{font-size:38px}
+.parcel-facts b{font-size:13px}
+.parcel-value strong{font-size:14px}
+.data-note,.geometry-pending{font-size:10px;line-height:1.8}
+.source-link,.drawer-open{font-size:10px}
+.search-box input{font-size:12px}
+.range-filters label,.sort-control{font-size:10px}
+.range-filters input,.sort-control select{font-size:11px}
+.drawer-head .eyebrow{font-size:10px}
+.drawer-head h3{font-size:24px}
+.drawer-controls .filter{font-size:10px}
+.parcel-drawer table{font-size:11px}
+.parcel-drawer th,.parcel-drawer td{font-size:11px}
+.parcel-drawer .table-footnote{font-size:10px}
+.select-row{font-size:10px}
+.drawer-filter-actions p,.reset-filters{font-size:10px}
+.future-description>p{font-size:12px}
+.future-illustrative{font-size:9px}
+.investment-total>p:last-child{font-size:12px}
+.context-line b{font-size:13px}
+.context-line small{font-size:10px}
+.mix-meter small{font-size:9px}
+.investment-material figcaption{font-size:9px}
+.developer-identity p,.developer-note>p{font-size:12px}
+.developer-note .under-link{font-size:11px}
+.closing-copy>p:not(.eyebrow){font-size:14px}
+.closing-copy .contact-details>span{font-size:10px}
+.closing-copy .contact-details>a{font-size:11px}
+.closing-copy .contact-details small{font-size:9px}
+.contact-form-panel label{font-size:11px}
+.contact-form-panel input,.contact-form-panel textarea{font-size:13px}
+.form-feedback{font-size:10px}
+.faq-heading>p{font-size:12px}
+.faq-list summary{font-size:14px}
+.faq-list details p{font-size:12px;line-height:1.9}
+.source-dialog-head .eyebrow{font-size:10px}
+.source-dialog>p,.source-dialog li{font-size:13px}
+.source-dialog .source-caveat{font-size:11px}
+.footer-main,.footer-bottom{font-size:10px}
+
+/* RTL actions use the same soft left chevron throughout. */
+.button span,.text-link span,.under-link span,.fact-explore span,.parcel-inquiry span,.nav-cta span,.source-link span,.drawer-trigger i{font-family:Arial,sans-serif;font-size:20px;font-weight:300;line-height:1;font-style:normal;color:var(--gold);vertical-align:-1px}
+.button-gold span{color:var(--deep)}
+.drawer-trigger span{font:11px Manrope,sans-serif}
+.drawer-trigger i{margin-right:7px}
+.button>span,.text-link>span,.under-link>span,.fact-explore>span,.parcel-inquiry>span,.nav-cta>span,.source-link>span,.drawer-trigger i{display:inline-block;direction:ltr;unicode-bidi:isolate}
+.source-link span,.nav-cta span,.drawer-trigger i{transition:transform .25s cubic-bezier(.2,.7,.25,1)}
+.source-link:hover span,.nav-cta:hover span,.drawer-trigger:hover i{transform:translateX(-3px)}
+
+@media(max-width:820px){
+  .reveal-heading>p,.location-heading>p,.explorer-heading>p{font-size:14px}
+  .hero-quickfacts span{font-size:9px}
+}
+@media(max-width:600px){
+  .hero-copy{font-size:12px}
+  .hero-quickfacts span{font-size:8px}
+  .hero-bottom{font-size:8px}
+  .hero-bottom>span:first-child{font-size:8px}
+  .hero-media-note{font-size:8px}
+  .section-kicker{font-size:9px}
+  .section-kicker .english{font-size:8px}
+  .reveal-heading>p,.location-heading>p,.explorer-heading>p{font-size:13px}
+  .land-reveal-frame figcaption,.geo-stage figcaption{font-size:10px}
+  .frame-index,.geo-stamp{font-size:8px}
+  .reveal-facts span{font-size:10px}
+  .plan-topline,.pending,.plan-legend,.reference-plan>span{font-size:10px}
+  .drawer-trigger{font-size:11px}
+  .panel-top h3{font-size:17px}
+  .record-count small{font-size:10px}
+  .quick-filters .filter{font-size:10px}
+  .parcel-number small,.parcel-facts small,.row-origin,.type-chip,.parcel-value span{font-size:10.5px}
+  .parcel-number strong{font-size:34px}
+  .parcel-facts b{font-size:13px}
+  .parcel-value strong{font-size:14px}
+  .data-note,.geometry-pending{font-size:11px}
+  .source-link,.drawer-open{font-size:11px}
+  .search-box input{font-size:12px}
+  .parcel-drawer .drawer-controls .range-filters label,.parcel-drawer .drawer-controls .sort-control{font-size:10px}
+  .parcel-drawer .drawer-controls .range-filters input,.parcel-drawer .drawer-controls .sort-control select{font-size:11px}
+  .drawer-head .eyebrow{font-size:9px}
+  .drawer-head h3{font-size:21px}
+  .parcel-drawer .drawer-controls .filter{font-size:10px}
+  .parcel-drawer .drawer-controls .drawer-filters{flex-wrap:wrap;gap:6px}
+  .parcel-drawer table,.parcel-drawer th,.parcel-drawer td{font-size:11px}
+  .parcel-drawer .table-footnote{font-size:10px}
+  .select-row{font-size:10px}
+  .drawer-filter-actions p,.reset-filters{font-size:10px}
+  .future-description>p{font-size:11px}
+  .future-illustrative{font-size:8px}
+  .investment-total>p:last-child{font-size:11px}
+  .context-line b{font-size:11px}
+  .context-line small{font-size:9px}
+  .mix-meter small{font-size:8px}
+  .investment-material figcaption{font-size:8px}
+  .developer-identity p,.developer-note>p{font-size:11px}
+  .developer-note .under-link{font-size:10px}
+  .closing-copy>p:not(.eyebrow){font-size:12px}
+  .closing-copy .contact-details>span{font-size:9px}
+  .closing-copy .contact-details>a{font-size:10px}
+  .closing-copy .contact-details small{font-size:9px}
+  .contact-form-panel label{font-size:10px}
+  .contact-form-panel input,.contact-form-panel textarea{font-size:12px}
+  .form-feedback{font-size:9px}
+  .faq-heading>p{font-size:11px}
+  .faq-list summary{font-size:12px}
+  .faq-list details p{font-size:11px}
+  .source-dialog-head .eyebrow{font-size:9px}
+  .source-dialog>p,.source-dialog li{font-size:11px}
+  .source-dialog .source-caveat{font-size:10px}
+  .footer-main,.footer-bottom{font-size:9px}
+  .nav-cta{font-size:10px}
+  .drawer-trigger span{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.button span,.text-link span,.under-link span,.fact-explore span,.parcel-inquiry span,.nav-cta span{transition:none!important}}

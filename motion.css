@@ -1,0 +1,68 @@
+/* A single, quiet motion language carries the story from the hero to inquiry. */
+.motion-ready .hero-content{animation:hero-arrive .9s cubic-bezier(.2,.7,.25,1) both}
+@keyframes hero-arrive{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+
+.motion-ready .reveal-heading,
+.motion-ready .reveal-facts,
+.motion-ready .location-heading,
+.motion-ready .geo-stage,
+.motion-ready .explorer-topline,
+.motion-ready .explorer-heading,
+.motion-ready .explorer-shell,
+.motion-ready .future-heading,
+.motion-ready .future-stage,
+.motion-ready .investment-composition,
+.motion-ready .investment-material,
+.motion-ready .developer-heading,
+.motion-ready .developer-composition,
+.motion-ready .closing-layout{
+  opacity:0;
+  translate:0 22px;
+  transition:opacity .72s ease,translate .82s cubic-bezier(.2,.7,.25,1);
+}
+.motion-ready .is-visible{opacity:1;translate:0 0}
+.motion-ready .reveal-facts{transition-delay:.1s}
+.motion-ready .geo-stage,.motion-ready .explorer-shell,.motion-ready .future-stage,.motion-ready .investment-material,.motion-ready .developer-composition,.motion-ready .closing-layout{transition-delay:.12s}
+
+.land-reveal,.location-journey,.explorer,.futures,.investment-editorial,.developer-section,.closing-inquiry{position:relative}
+.motion-ready .land-reveal::before,
+.motion-ready .location-journey::before,
+.motion-ready .explorer::before,
+.motion-ready .futures::before,
+.motion-ready .investment-editorial::before,
+.motion-ready .developer-section::before,
+.motion-ready .closing-inquiry::before{
+  content:"";
+  position:absolute;
+  z-index:3;
+  top:0;
+  right:7%;
+  width:1px;
+  height:clamp(34px,5vw,62px);
+  background:linear-gradient(to bottom,transparent,#b59a58 24%,#b59a58 83%,transparent);
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .8s cubic-bezier(.2,.7,.25,1);
+  pointer-events:none;
+}
+.motion-ready .land-reveal.is-visible::before,
+.motion-ready .location-journey.is-visible::before,
+.motion-ready .explorer.is-visible::before,
+.motion-ready .futures.is-visible::before,
+.motion-ready .investment-editorial.is-visible::before,
+.motion-ready .developer-section.is-visible::before,
+.motion-ready .closing-inquiry.is-visible::before{transform:scaleY(1)}
+
+.motion-ready .land-reveal-frame>img,.motion-ready .geo-stage>img{transform:scale(1.025);transition:transform 1.35s cubic-bezier(.2,.7,.25,1)}
+.motion-ready .land-reveal-frame.is-visible>img,.motion-ready .geo-stage.is-visible>img{transform:scale(1)}
+.motion-ready .future-image{transform:scale(1.055);transition:clip-path .72s cubic-bezier(.2,.7,.25,1),transform 1.2s cubic-bezier(.2,.7,.25,1)}
+.motion-ready .future-stage.is-visible .future-image{transform:scale(1)}
+.motion-ready .future-frame path{stroke-dasharray:1900;stroke-dashoffset:1900;transition:stroke-dashoffset 1.25s cubic-bezier(.2,.7,.25,1) .12s}
+.motion-ready .future-stage.is-visible .future-frame path{stroke-dashoffset:0}
+.motion-ready .future-copy{transition:opacity .42s ease,translate .55s cubic-bezier(.2,.7,.25,1)}
+.motion-ready .future-stage.is-switching .future-copy{opacity:.25;translate:0 8px}
+.motion-ready .future-stage.is-switching .future-window{animation:future-window-shift .68s cubic-bezier(.2,.7,.25,1)}
+@keyframes future-window-shift{50%{filter:saturate(.6);transform:translateY(4px)}to{filter:saturate(1);transform:translateY(0)}}
+
+@media(max-width:600px){.motion-ready .land-reveal::before,.motion-ready .location-journey::before,.motion-ready .explorer::before,.motion-ready .futures::before,.motion-ready .investment-editorial::before,.motion-ready .developer-section::before,.motion-ready .closing-inquiry::before{right:6%;height:34px}}
+@media(prefers-reduced-motion:reduce){.motion-ready *, .motion-ready *::before,.motion-ready *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.motion-ready .reveal-heading,.motion-ready .reveal-facts,.motion-ready .location-heading,.motion-ready .geo-stage,.motion-ready .explorer-topline,.motion-ready .explorer-heading,.motion-ready .explorer-shell,.motion-ready .future-heading,.motion-ready .future-stage,.motion-ready .investment-composition,.motion-ready .investment-material,.motion-ready .developer-heading,.motion-ready .developer-composition,.motion-ready .closing-layout{opacity:1!important;translate:0 0!important}}
