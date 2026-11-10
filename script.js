@@ -4,6 +4,7 @@
   const toggle = document.querySelector('.menu-toggle');
   const menuLinks = document.querySelectorAll('#nav-links a');
   const search = document.querySelector('#parcel-search');
+  const searchInputs = [...document.querySelectorAll('[data-parcel-search]')];
   const card = document.querySelector('#parcel-card');
   const noRecord = document.querySelector('#no-record');
   const tableBody = document.querySelector('#parcel-table');
@@ -132,14 +133,18 @@
   }
 
   filters.forEach(button => button.addEventListener('click', () => setType(button.dataset.type)));
-  [search, document.querySelector('#area-min'), document.querySelector('#area-max'), document.querySelector('#price-min'), document.querySelector('#price-max')].forEach(input => input.addEventListener('input', render));
+  searchInputs.forEach(input => input.addEventListener('input', () => {
+    searchInputs.forEach(other => { if (other !== input) other.value = input.value; });
+    render();
+  }));
+  [document.querySelector('#area-min'), document.querySelector('#area-max'), document.querySelector('#price-min'), document.querySelector('#price-max')].forEach(input => input.addEventListener('input', render));
   document.querySelector('#sort-by').addEventListener('change', render);
   document.querySelector('[data-reset-filters]').addEventListener('click', () => {
-    search.value = '';
+    searchInputs.forEach(input => { input.value = ''; });
     ['#area-min','#area-max','#price-min','#price-max'].forEach(selector => document.querySelector(selector).value = '');
     document.querySelector('#sort-by').value = 'row';
     setType('all');
-    search.focus();
+    document.querySelector('#drawer-parcel-search')?.focus();
   });
   tableBody.addEventListener('click', event => {
     const row = event.target.closest('tr[data-parcel]');
