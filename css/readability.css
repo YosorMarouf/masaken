@@ -130,3 +130,7 @@
   .drawer-trigger span{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.button span,.text-link span,.under-link span,.fact-explore span,.parcel-inquiry span,.nav-cta span{transition:none!important}}
+.hero-quickfacts strong{font-size:clamp(30px,2.4vw,34px);font-variant-numeric:tabular-nums}
+.hero-quickfacts strong [data-counter]{font:inherit;color:inherit}
+.hero-quickfacts strong i{font-size:14px}
+@media(max-width:600px){.hero-quickfacts strong{font-size:17px}.hero-quickfacts strong i{font-size:12px}}

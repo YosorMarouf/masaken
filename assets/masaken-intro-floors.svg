@@ -1,0 +1,12 @@
+<svg class="construction-intro__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 591 431" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="intro-gold" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#ad7923"/><stop offset=".55" stop-color="#dcaa42"/><stop offset="1" stop-color="#b8812c"/></linearGradient>
+    <linearGradient id="intro-green" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#00352c"/><stop offset="1" stop-color="#002d25"/></linearGradient>
+  </defs>
+  <g class="construction-intro__floor floor-1"><path fill="url(#intro-gold)" d="M22 117 225 52 235 104 22 156Z"/><path fill="url(#intro-green)" d="M225 52 352 11 484 62 470 115 352 73 235 104Z"/><path fill="url(#intro-gold)" d="M484 62 528 81 528 126 470 115Z"/></g>
+  <g class="construction-intro__floor floor-2"><path fill="url(#intro-gold)" d="M22 175 240 119 247 169 22 213Z"/><path fill="url(#intro-green)" d="M240 119 352 90 468 124 456 175 352 153 247 169Z"/><path fill="url(#intro-gold)" d="M468 124 528 138 528 188 456 175Z"/></g>
+  <g class="construction-intro__floor floor-3"><path fill="url(#intro-gold)" d="M22 234 251 190 258 241 22 272Z"/><path fill="url(#intro-green)" d="M251 190 352 170 450 190 440 240 352 229 258 241Z"/><path fill="url(#intro-gold)" d="M450 190 528 198 528 241 440 240Z"/></g>
+  <g class="construction-intro__floor floor-4"><path fill="url(#intro-gold)" d="M22 290 261 260 269 310 22 330Z"/><path fill="url(#intro-green)" d="M261 260 352 248 434 257 425 307 352 306 269 310Z"/><path fill="url(#intro-gold)" d="M434 257 528 255 528 299 425 307Z"/></g>
+  <g class="construction-intro__floor floor-5"><path fill="url(#intro-gold)" d="M22 347 273 326 281 378 22 380Z"/><path fill="url(#intro-green)" d="M273 326 352 322 418 321 407 379 281 378Z"/><path fill="url(#intro-gold)" d="M418 321 528 314 528 379 407 379Z"/></g>
+  <g class="construction-intro__floor floor-6"><path fill="url(#intro-gold)" d="M0 394 H591 V416 H0Z"/></g>
+</svg>

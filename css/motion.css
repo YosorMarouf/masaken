@@ -29,7 +29,6 @@
 .motion-ready .location-journey::before,
 .motion-ready .explorer::before,
 .motion-ready .futures::before,
-.motion-ready .investment-editorial::before,
 .motion-ready .developer-section::before,
 .motion-ready .closing-inquiry::before{
   content:"";
@@ -49,7 +48,6 @@
 .motion-ready .location-journey.is-visible::before,
 .motion-ready .explorer.is-visible::before,
 .motion-ready .futures.is-visible::before,
-.motion-ready .investment-editorial.is-visible::before,
 .motion-ready .developer-section.is-visible::before,
 .motion-ready .closing-inquiry.is-visible::before{transform:scaleY(1)}
 
@@ -64,5 +62,56 @@
 .motion-ready .future-stage.is-switching .future-window{animation:future-window-shift .68s cubic-bezier(.2,.7,.25,1)}
 @keyframes future-window-shift{50%{filter:saturate(.6);transform:translateY(4px)}to{filter:saturate(1);transform:translateY(0)}}
 
-@media(max-width:600px){.motion-ready .land-reveal::before,.motion-ready .location-journey::before,.motion-ready .explorer::before,.motion-ready .futures::before,.motion-ready .investment-editorial::before,.motion-ready .developer-section::before,.motion-ready .closing-inquiry::before{right:6%;height:34px}}
+@media(max-width:600px){.motion-ready .land-reveal::before,.motion-ready .location-journey::before,.motion-ready .explorer::before,.motion-ready .futures::before,.motion-ready .developer-section::before,.motion-ready .closing-inquiry::before{right:6%;height:34px}}
 @media(prefers-reduced-motion:reduce){.motion-ready *, .motion-ready *::before,.motion-ready *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.motion-ready .reveal-heading,.motion-ready .reveal-facts,.motion-ready .location-heading,.motion-ready .geo-stage,.motion-ready .explorer-topline,.motion-ready .explorer-heading,.motion-ready .explorer-shell,.motion-ready .future-heading,.motion-ready .future-stage,.motion-ready .investment-composition,.motion-ready .investment-material,.motion-ready .developer-heading,.motion-ready .developer-composition,.motion-ready .closing-layout{opacity:1!important;translate:0 0!important}}
+/* Reveal the location story in three coordinated steps. */
+.location-journey.location-reveal-ready .location-heading > .section-kicker,
+.location-journey.location-reveal-ready .location-intro > h2,
+.location-journey.location-reveal-ready .location-intro > :not(h2),
+.location-journey.location-reveal-ready .location-map-column {
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 24px;
+  transition: opacity .75s ease, translate .85s cubic-bezier(.2,.7,.25,1), visibility 0s linear .85s;
+}
+.location-journey.location-reveal-ready.location-revealed .location-heading > .section-kicker,
+.location-journey.location-reveal-ready.location-revealed .location-intro > h2,
+.location-journey.location-reveal-ready.location-revealed .location-intro > :not(h2),
+.location-journey.location-reveal-ready.location-revealed .location-map-column {
+  opacity: 1;
+  visibility: visible;
+  translate: 0 0;
+  transition-delay: 0s;
+}
+.location-journey.location-reveal-ready.location-revealed .location-intro > h2 { transition-delay: .35s; }
+.location-journey.location-reveal-ready.location-revealed .location-intro > :not(h2),
+.location-journey.location-reveal-ready.location-revealed .location-map-column { transition-delay: .8s; }
+@media (prefers-reduced-motion: reduce) {
+  .location-journey.location-reveal-ready .location-heading > .section-kicker,
+  .location-journey.location-reveal-ready .location-intro > h2,
+  .location-journey.location-reveal-ready .location-intro > :not(h2),
+  .location-journey.location-reveal-ready .location-map-column { opacity: 1; visibility: visible; translate: none; transition: none; }
+}
+/* The highlighted line follows the opening line of each main heading. */
+@media (prefers-reduced-motion: no-preference) {
+  .heading-sequence-ready .heading-sequence-gold { display: inline-block; opacity: 0; }
+  .heading-sequence-ready.heading-sequence-visible .heading-sequence-gold {
+    animation: heading-gold-arrive .7s cubic-bezier(.2,.7,.25,1) .38s both;
+  }
+  .location-reveal-ready .heading-sequence-gold { display: inline-block; opacity: 0; }
+  .location-revealed .heading-sequence-gold {
+    animation: heading-gold-arrive .7s cubic-bezier(.2,.7,.25,1) .7s both;
+  }
+}
+@keyframes heading-gold-arrive {
+  from { clip-path: inset(0 0 0 100%); opacity: 0; transform: translateY(8px); }
+  to { clip-path: inset(0 0 0 0); opacity: 1; transform: translateY(0); }
+}
+/* Keep the opportunity heading clean and give the location reveal room to unfold. */
+#investment .investment-topline { border-bottom: 0; }
+.location-journey.location-reveal-ready.location-revealed .location-intro > h2 { transition-delay: .55s; }
+.location-journey.location-reveal-ready.location-revealed .location-intro > :not(h2),
+.location-journey.location-reveal-ready.location-revealed .location-map-column { transition-delay: 1.8s; }
+@media (prefers-reduced-motion: no-preference) {
+  .location-revealed .heading-sequence-gold { animation-duration: 1s; animation-delay: 1.05s; }
+}

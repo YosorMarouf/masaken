@@ -1,0 +1,79 @@
+/* Section 07: institutional identities on the established project dark palette. */
+.developer-section {
+  min-height: 75svh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(34px, 4.6vw, 62px) 8% clamp(38px, 5vw, 66px);
+  background: #102b25;
+  color: #f4f0e7;
+}
+.developer-heading { justify-content: flex-start; align-items: center; opacity: 1; translate: 0 0; }
+.developer-section .developer-heading { opacity: 1; translate: 0 0; }
+.developer-heading .section-kicker { color: #eee8da; }
+.developer-section::before { display: none; }
+.developer-composition {
+  flex: 1;
+  width: min(100%, 1050px);
+  margin: 0 auto;
+  padding: clamp(34px, 4vw, 54px) 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: clamp(20px, 4vw, 58px);
+  align-items: center;
+  justify-content: space-between;
+}
+.developer-composition { opacity: 1; translate: 0 0; transition: none; }
+.institution { min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.identity-developer { order: 0; flex: 1 1 0; }
+.identity-marketer { order: 2; flex: 1 1 0; }
+.identity-role { display: grid; gap: 5px; margin: 0 0 22px; color: #d0cbbf; }
+.identity-role span:first-child { font-size: 13px; }
+.identity-role span:last-child { direction: ltr; font: 9px/1.4 Manrope, sans-serif; letter-spacing: .17em; color: #a8aaa1; }
+.identity-logo { display: block; width: min(100%, 340px); height: 92px; object-fit: contain; }
+.alrajhi-mark { width: min(100%, 355px); filter: brightness(0) invert(.94); }
+.menassat-mark { width: min(100%, 300px); }
+.identity-arabic { margin: 19px 0 0; color: #f4f0e7; font-size: 14px; }
+.identity-detail { margin: 7px 0 0; color: #b4b2a8; font-size: 10px; }
+.identity-link { margin-top: 18px; color: #c7b477; font-size: 10px; text-decoration: none; }
+.identity-link span { margin-right: 5px; }
+.identity-marker { order: 1; flex: 0 0 25px; width: 25px; height: 1px; background: #b59a58; }
+.developer-section.motion-enabled .developer-heading,
+.developer-section.motion-enabled .identity-developer,
+.developer-section.motion-enabled .identity-marketer { opacity: 0; translate: 0 12px; transition: opacity .68s ease, translate .72s cubic-bezier(.2,.7,.25,1); }
+.developer-section.motion-enabled .developer-heading.is-visible,
+.developer-section.motion-enabled .identity-developer.is-visible,
+.developer-section.motion-enabled .identity-marketer.is-visible { opacity: 1; translate: 0 0; }
+.developer-section.motion-enabled .identity-developer { transition-delay: .12s; }
+.developer-section.motion-enabled .identity-marketer { transition-delay: .3s; }
+@media (max-width: 600px) {
+  .developer-section { min-height: 72svh; padding: 34px 6% 38px; }
+  .developer-heading { display: flex; }
+  .developer-composition { flex-direction: column; justify-content: center; gap: 15px; padding-top: 24px; }
+  .identity-developer { order: 0; flex: 0 0 auto; }
+  .identity-marketer { order: 2; flex: 0 0 auto; }
+  .identity-marker { order: 1; flex: 0 0 1px; width: 25px; }
+  .identity-role { gap: 3px; margin-bottom: 11px; }
+  .identity-role span:first-child { font-size: 11px; }
+  .identity-logo { height: 59px; }
+  .alrajhi-mark { width: min(84%, 290px); }
+  .menassat-mark { width: min(76%, 260px); }
+  .identity-arabic { margin-top: 8px; font-size: 11px; }
+  .identity-detail { margin-top: 3px; font-size: 8px; }
+  .identity-link { margin-top: 8px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .developer-section.motion-enabled .developer-heading, .developer-section.motion-enabled .identity-developer, .developer-section.motion-enabled .identity-marketer { opacity: 1; translate: 0 0; }
+}
+/* A quiet response for each identity, without shifting the layout. */
+.identity-logo{transition:transform .38s cubic-bezier(.2,.7,.25,1)}
+.identity-role,.identity-arabic{transition:color .3s ease}
+.identity-link{position:relative;transition:color .3s ease}
+.identity-link::after{content:"";position:absolute;right:0;left:0;bottom:-5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
+.identity-link span{display:inline-block;transition:transform .35s ease}
+.institution:hover .identity-logo,.institution:focus-within .identity-logo{transform:translateY(-5px) scale(1.025)}
+.institution:hover .identity-role,.institution:focus-within .identity-role,.institution:hover .identity-arabic,.institution:focus-within .identity-arabic{color:#fffaf0}
+.institution:hover .identity-link,.institution:focus-within .identity-link{color:#e0c888}
+.institution:hover .identity-link::after,.institution:focus-within .identity-link::after{transform:scaleX(1)}
+.institution:hover .identity-link span,.institution:focus-within .identity-link span{transform:translate(2px,-2px)}
+@media(prefers-reduced-motion:reduce){.identity-logo,.identity-link,.identity-link::after,.identity-link span{transition:none}.institution:hover .identity-logo,.institution:focus-within .identity-logo{transform:none}}

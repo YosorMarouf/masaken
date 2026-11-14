@@ -1,0 +1,72 @@
+/* Small decision sequence contained entirely in the FAQ introduction. */
+.faq-section .faq-heading h2 span{color:var(--gold)}
+.faq-section .faq-list summary{font-size:16px}
+.faq-intro-aside{width:min(100%,270px);justify-self:start;align-self:end}
+.faq-intro-aside>p{max-width:240px;margin:0 0 13px 0;font-size:10px;line-height:1.9;color:#77766e}
+.decision-journey{
+  --journey-bronze:#9b8250;
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:2px 3px 0;
+  isolation:isolate;
+}
+.decision-journey::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:6px;
+  right:8%;left:8%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--journey-bronze) 12%,var(--journey-bronze) 88%,transparent);
+  transform:scaleX(0);
+  transform-origin:right center;
+  transition:transform .72s cubic-bezier(.2,.65,.25,1);
+}
+.decision-step{
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+  color:#536056;
+  opacity:0;
+  transform:translateY(5px);
+  transition:opacity .34s ease,transform .34s ease;
+}
+.decision-step:first-child{align-items:flex-start}
+.decision-step:last-child{align-items:flex-end}
+.decision-step i{
+  display:block;
+  width:9px;height:9px;
+  border:1px solid var(--journey-bronze);
+  background:#ece8dd;
+  transform:rotate(45deg) scale(.72);
+  transition:transform .34s ease,background-color .34s ease;
+}
+.decision-step b{font-size:9px;font-weight:400;white-space:nowrap}
+.decision-journey.is-visible::before{transform:scaleX(1)}
+.decision-journey.is-visible .decision-step{opacity:1;transform:translateY(0)}
+.decision-journey.is-visible .decision-step:nth-child(1){transition-delay:.26s}
+.decision-journey.is-visible .decision-step:nth-child(2){transition-delay:.42s}
+.decision-journey.is-visible .decision-step:nth-child(3){transition-delay:.58s}
+.decision-journey.is-visible .decision-step i{transform:rotate(45deg) scale(1)}
+.decision-journey.is-visible .decision-step:nth-child(1) i{transition-delay:.26s;background:#9b8250}
+.decision-journey.is-visible .decision-step:nth-child(2) i{transition-delay:.42s;background:#9b8250}
+.decision-journey.is-visible .decision-step:nth-child(3) i{transition-delay:.58s;background:#9b8250}
+@media(max-width:600px){
+  .faq-section .faq-list summary{font-size:14px}
+  .faq-intro-aside{width:100%;justify-self:stretch;margin-top:1px}
+  .faq-intro-aside>p{margin-bottom:10px;font-size:9px}
+  .decision-journey{max-width:310px;padding-inline:2px}
+  .decision-journey::before{right:9%;left:9%;top:5px}
+  .decision-step{gap:6px}
+  .decision-step i{width:8px;height:8px}
+  .decision-step b{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .decision-journey::before{transform:scaleX(1);transition:none}
+  .decision-step{opacity:1;transform:none;transition:none}
+  .decision-step i{transform:rotate(45deg);background:#9b8250;transition:none}
+}

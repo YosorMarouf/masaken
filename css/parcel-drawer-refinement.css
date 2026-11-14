@@ -1,0 +1,101 @@
+/* Premium inventory modal. All rules are scoped to the parcel register. */
+#parcel-drawer.parcel-drawer {
+  --drawer-line: rgba(23, 52, 45, .13);
+  width: min(1220px, 94vw);
+  height: min(900px, 91dvh);
+  max-height: 91dvh;
+  padding: clamp(20px, 2.2vw, 32px) clamp(20px, 2.8vw, 40px) 18px;
+  border: 1px solid rgba(181, 154, 88, .48);
+  border-radius: 2px;
+  background: #f5f2e9;
+  color: #24352e;
+  box-shadow: 0 24px 70px rgba(9, 27, 22, .28);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .27s ease, transform .27s ease, display .27s allow-discrete;
+}
+#parcel-drawer.parcel-drawer[open] { transition-behavior: allow-discrete; }
+@starting-style { #parcel-drawer.parcel-drawer[open] { opacity: 0; transform: translateY(10px); } }
+#parcel-drawer.parcel-drawer[open] { display: flex; flex-direction: column; opacity: 1; transform: translateY(0); }
+#parcel-drawer::backdrop { background: rgba(10, 29, 24, .7); }
+#parcel-drawer .drawer-head { flex: 0 0 auto; align-items: center; padding: 0 0 16px; border-bottom: 1px solid var(--drawer-line); }
+#parcel-drawer .drawer-title-group { display: grid; grid-template-columns: auto auto; align-items: baseline; column-gap: 15px; }
+#parcel-drawer .drawer-title-group .eyebrow { grid-column: 1 / -1; margin: 0 0 3px; color: #947b47; font-size: 10px; letter-spacing: .08em; }
+#parcel-drawer .drawer-head h3 { color: #173c32; font-size: clamp(21px, 2vw, 27px); font-weight: 500; line-height: 1.45; }
+#parcel-drawer .drawer-total { margin: 0; color: #8a7445; font: 500 15px/1.4 Manrope, 'IBM Plex Sans Arabic', sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#parcel-drawer .drawer-total span { font: 400 12px 'IBM Plex Sans Arabic', sans-serif; color: #77776f; }
+#parcel-drawer .drawer-head-actions { gap: 16px; }
+#parcel-drawer .return-selection { padding: 9px 0; border-bottom-color: rgba(181,154,88,.75); color: #173c32; font-size: 12px; }
+#parcel-drawer .drawer-close { width: 36px; height: 36px; border-color: var(--drawer-line); color: #173c32; font-size: 22px; transition: background .18s ease, color .18s ease; }
+#parcel-drawer .drawer-close:hover { background: #e9e4d8; }
+#parcel-drawer .drawer-controls { flex: 0 0 auto; grid-template-columns: minmax(250px, 1.2fr) auto; gap: 11px 24px; padding: 15px 0 13px; border-bottom: 1px solid var(--drawer-line); }
+#parcel-drawer .drawer-controls .search-box { min-height: 44px; padding: 0 12px; border: 1px solid rgba(23,52,45,.18); background: #faf8f1; }
+#parcel-drawer .drawer-controls .search-box:focus-within { border-color: #b59a58; }
+#parcel-drawer .drawer-controls .drawer-filters { display: flex; justify-content: flex-start; gap: 6px; align-items: center; }
+#parcel-drawer .drawer-filters .filter { min-height: 40px; padding: 8px 13px; border: 1px solid transparent; background: transparent; color: #626b63; font-size: 12px; white-space: nowrap; }
+#parcel-drawer .drawer-filters .filter:hover { background: #ece8dd; }
+#parcel-drawer .drawer-filters .filter.active { border-color: rgba(181,154,88,.55); background: #eee8d8; color: #173c32; }
+#parcel-drawer .drawer-controls .range-filters { grid-column: 1; display: flex; flex-wrap: wrap; gap: 10px 17px; align-items: center; margin: 0; }
+#parcel-drawer .drawer-controls .range-filters label { gap: 6px; color: #686d65; font-size: 11px; }
+#parcel-drawer .drawer-controls .range-filters input { width: 76px; padding: 7px 4px; border-bottom-color: rgba(23,52,45,.23); font: 12px Manrope, sans-serif; font-variant-numeric: tabular-nums; }
+#parcel-drawer .drawer-controls .sort-control { grid-column: 2; justify-self: end; font-size: 11px; }
+#parcel-drawer .drawer-controls .sort-control select { min-height: 38px; padding: 6px 10px; border-color: rgba(23,52,45,.18); background: #faf8f1; font-size: 12px; }
+#parcel-drawer .table-wrap { flex: 1 1 auto; min-height: 0; margin: 0; padding: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(23,60,50,.28) transparent; border: 0; }
+#parcel-drawer .table-wrap::-webkit-scrollbar { width: 7px; height: 7px; }
+#parcel-drawer .table-wrap::-webkit-scrollbar-thumb { border-radius: 6px; background: rgba(23,60,50,.25); }
+#parcel-drawer .drawer-filter-actions { position: sticky; top: 0; z-index: 3; display: flex; min-height: 42px; align-items: center; justify-content: space-between; padding: 4px 2px; border-bottom: 1px solid var(--drawer-line); background: #f5f2e9; }
+#parcel-drawer .drawer-filter-actions p { margin: 0; color: #59665e; font-size: 12px; }
+#parcel-drawer .reset-filters { padding: 7px 2px; border: 0; background: transparent; color: #8c7442; font: 12px 'IBM Plex Sans Arabic', sans-serif; cursor: pointer; }
+#parcel-drawer .reset-filters:hover { color: #173c32; }
+#parcel-drawer table { width: 100%; min-width: 860px; border-collapse: separate; border-spacing: 0; font-size: 13px; text-align: right; }
+#parcel-drawer thead th { position: sticky; top: 42px; z-index: 2; padding: 12px 13px; border-bottom: 1px solid rgba(23,52,45,.18); background: #ede9de; color: #647067; font-size: 12px; font-weight: 500; white-space: nowrap; }
+#parcel-drawer tbody td { height: 53px; padding: 9px 13px; border-bottom: 1px solid rgba(23,52,45,.09); color: #59615b; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#parcel-drawer tbody td:first-child { color: #818078; }
+#parcel-drawer tbody td b { color: #173c32; font: 600 16px Manrope, sans-serif; font-variant-numeric: tabular-nums; }
+#parcel-drawer tbody tr { transition: background .17s ease; }
+#parcel-drawer tbody tr:hover { background: #ece8dd; }
+#parcel-drawer tbody tr.selected-row { background: #eee9dc; box-shadow: inset -2px 0 #b59a58; }
+#parcel-drawer tbody tr:focus-visible { outline: 2px solid #b59a58; outline-offset: -2px; }
+#parcel-drawer .select-row { display: inline-flex; min-height: 34px; align-items: center; justify-content: center; padding: 6px 13px; border: 1px solid rgba(23,60,50,.26); border-radius: 1px; background: transparent; color: #173c32; font: 500 12px 'IBM Plex Sans Arabic', sans-serif; cursor: pointer; transition: color .17s ease, background .17s ease, border-color .17s ease; }
+#parcel-drawer .select-row:hover { border-color: #173c32; background: #173c32; color: #f5f2e9; }
+#parcel-drawer .select-row.is-current { border-color: rgba(181,154,88,.5); background: #f0eadb; color: #8c7442; cursor: default; }
+#parcel-drawer .table-footnote { margin: 0; padding: 12px 2px 4px; color: #77776f; font-size: 11px; line-height: 1.7; }
+@media (max-width: 900px) {
+  #parcel-drawer.parcel-drawer { width: min(900px, 96vw); height: min(900px, 94dvh); max-height: 94dvh; padding: 19px 20px 13px; }
+  #parcel-drawer .drawer-controls { grid-template-columns: 1fr; gap: 8px; }
+  #parcel-drawer .drawer-controls .search-box, #parcel-drawer .drawer-controls .drawer-filters,
+  #parcel-drawer .drawer-controls .range-filters, #parcel-drawer .drawer-controls .sort-control { grid-column: 1; }
+  #parcel-drawer .drawer-controls .sort-control { justify-self: start; }
+}
+@media (max-width: 600px) {
+  #parcel-drawer.parcel-drawer { inset: auto 0 0; width: 100%; height: min(94dvh, 900px); max-height: 94dvh; padding: 16px 14px 10px; border-bottom: 0; border-radius: 12px 12px 0 0; }
+  #parcel-drawer .drawer-head { align-items: flex-start; gap: 8px; padding-bottom: 11px; }
+  #parcel-drawer .drawer-title-group { column-gap: 9px; }
+  #parcel-drawer .drawer-head h3 { font-size: 18px; }
+  #parcel-drawer .drawer-total { font-size: 12px; }
+  #parcel-drawer .drawer-total span { font-size: 10px; }
+  #parcel-drawer .drawer-head-actions { gap: 8px; }
+  #parcel-drawer .return-selection { max-width: 88px; font-size: 10px; line-height: 1.5; }
+  #parcel-drawer .drawer-close { width: 32px; height: 32px; flex: 0 0 32px; }
+  #parcel-drawer .drawer-controls { gap: 7px; padding: 9px 0; }
+  #parcel-drawer .drawer-controls .search-box { min-height: 40px; }
+  #parcel-drawer .drawer-controls .drawer-filters { flex-wrap: wrap; gap: 3px; }
+  #parcel-drawer .drawer-filters .filter { min-height: 34px; padding: 6px 9px; font-size: 11px; }
+  #parcel-drawer .drawer-controls .range-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+  #parcel-drawer .drawer-controls .range-filters label { justify-content: space-between; font-size: 10px; }
+  #parcel-drawer .drawer-controls .range-filters input { width: 66px; font-size: 11px; }
+  #parcel-drawer .drawer-controls .sort-control { font-size: 10px; }
+  #parcel-drawer .drawer-controls .sort-control select { min-height: 34px; font-size: 11px; }
+  #parcel-drawer .drawer-filter-actions { min-height: 37px; }
+  #parcel-drawer .drawer-filter-actions p, #parcel-drawer .reset-filters { font-size: 11px; }
+  #parcel-drawer table { min-width: 820px; font-size: 12px; }
+  #parcel-drawer thead th { top: 37px; padding: 10px 9px; font-size: 11px; }
+  #parcel-drawer tbody td { height: 48px; padding: 8px 9px; font-size: 12px; }
+  #parcel-drawer tbody td b { font-size: 15px; }
+  #parcel-drawer .select-row { min-height: 32px; padding-inline: 10px; font-size: 11px; }
+  #parcel-drawer .table-footnote { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #parcel-drawer.parcel-drawer, #parcel-drawer * { transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

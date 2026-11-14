@@ -1,6 +1,6 @@
 # مساكن الريان — website prototype
 
-Responsive Arabic RTL website for the Masaken Al Rayan land subdivision project. The implementation is a dependency-free static frontend (`index.html`, `styles.css`, `overrides.css`, `redesign.css`, `polish.css`, `motion.css`, `readability.css`, `script.js`) so it can be previewed from a local web server or integrated into a future application. The creative direction is “الأرض التي ترسم مستقبلها”: an editorial journey from the source plan, through the project context and a compact land explorer, to inquiry. Motion uses lightweight CSS and IntersectionObserver reveals, with reduced-motion support. Readable Arabic type sizes and an isolated soft-chevron icon system complement the visual language. The hero's copy, layout, contrast, and project facts are refined around the existing temporary video, which remains unchanged.
+Responsive Arabic RTL website for the Masaken Al Rayan land subdivision project. The implementation is a dependency-free static frontend (`index.html`, `css/styles.css`, `css/overrides.css`, `css/redesign.css`, `css/polish.css`, `css/motion.css`, `css/readability.css`, `js/script.js`) so it can be previewed from a local web server or integrated into a future application. The creative direction is “الأرض التي ترسم مستقبلها”: an editorial journey from the source plan, through the project context and a compact land explorer, to inquiry. Motion uses lightweight CSS and IntersectionObserver reveals, with reduced-motion support. Readable Arabic type sizes and an isolated soft-chevron icon system complement the visual language. The hero's copy, layout, contrast, and project facts are refined around the existing temporary video, which remains unchanged.
 
 ## Run locally
 
@@ -29,15 +29,14 @@ Source PDFs provided from Downloads were reviewed: `جميع القطع.pdf` sup
 
 `assets/commercial-street.jpg` — generated illustrative commercial streetscape; not an existing project building.
 
-`assets/material-detail.jpg` — generated illustrative stone and screen detail.
 
 `assets/final-landscape.jpg` — generated dusk desert scene for the final CTA, not the project site.
 
-`assets/project-aerial-reference.jpg` and `assets/official-masterplan-reference.jpg` — optimized raster references extracted from supplied PDFs; both are displayed as source images and not used as interactive maps.
+`assets/official-masterplan-reference.jpg` — a raster reference extracted from the supplied plan; it is displayed as a source image and not used as an interactive map.
 
-`assets/developer-logo.jpg` and `assets/developer-logo-transparent.png` — logo crop from the supplied brochure, with the transparent variant used in the developer block.
+`assets/developer-logo-transparent.png` — logo crop from the supplied brochure, used in the developer block.
 
-`assets/hero-temporary.mp4` — user-supplied temporary hero video. The generated illustrative land image remains the poster and fallback.
+`assets/hero-with-ending-optimized.mp4` — optimized hero video. The generated illustrative land image remains the poster and fallback.
 
 The three illustrative images were generated with the built-in ImageGen workflow. They and the extracted source references were converted to optimized JPEGs for delivery. Images can be replaced at these paths.
 

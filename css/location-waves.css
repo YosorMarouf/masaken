@@ -1,0 +1,7 @@
+/* Very quiet topographic flow, kept inside the location section background. */
+.location-journey {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23d3bd8a' stroke-width='1.25' stroke-opacity='.12'%3E%3Cpath d='M-90 575 C115 520 220 470 390 485 C590 503 704 585 900 548 C1084 513 1192 400 1373 418 C1460 427 1525 467 1690 430'/%3E%3Cpath d='M-100 626 C101 570 231 520 405 535 C592 551 731 634 920 597 C1100 561 1216 454 1392 469 C1490 478 1553 518 1705 484'/%3E%3Cpath d='M-95 680 C115 625 243 577 420 590 C605 604 752 683 936 648 C1118 613 1243 510 1410 523 C1508 531 1570 571 1714 540'/%3E%3Cpath d='M-95 730 C122 678 258 630 438 641 C624 653 774 730 955 697 C1134 664 1268 567 1427 578 C1522 585 1587 626 1722 597'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}

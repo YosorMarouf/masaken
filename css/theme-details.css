@@ -1,0 +1,41 @@
+/* Keep browser level accents aligned with the site's primary gold. */
+:root {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--gold) var(--ivory);
+  scrollbar-width: thin;
+}
+
+::selection {
+  color: #fff;
+  background: var(--gold);
+}
+
+::-moz-selection {
+  color: #fff;
+  background: var(--gold);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--ivory);
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9c8247;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}

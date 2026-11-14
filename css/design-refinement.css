@@ -1,0 +1,33 @@
+/* Typography and spacing refinements for the existing design. */
+.section-kicker .english{font-size:10px;letter-spacing:.1em;color:#74766e}
+.hero-copy{color:rgba(255,255,255,.82);font-size:16px;line-height:1.9}
+.land-gallery .gallery-heading>p,.location-experience .location-intro>p{font-size:15px;line-height:1.85}
+.future-description>p{font-size:13px;line-height:1.8;color:#666a61}
+.future-illustrative{font-size:10px}
+.faq-list details p{font-size:14px;line-height:1.9;color:#62685f}
+.developer-section{min-height:68svh}
+.developer-composition{padding-top:clamp(30px,3.5vw,46px)}
+.identity-role span:last-child{font-size:10px;letter-spacing:.14em;color:#c1c3b8}
+.identity-arabic{font-size:15px}
+.identity-detail{font-size:12px;line-height:1.7;color:#c8c8bc}
+.identity-link{font-size:12px}
+.developer-section .section-kicker .english,.location-experience .section-kicker .english,.closing-inquiry .section-kicker .english{color:#b5b8aa}
+@media(max-width:700px){
+  .section-kicker{font-size:10px}
+  .section-kicker .english{font-size:9px;letter-spacing:.08em}
+  .hero-copy{font-size:14px;line-height:1.85}
+  .land-gallery .gallery-heading>p,.location-experience .location-intro>p{font-size:13px;line-height:1.75}
+  .future-description>p{font-size:12px}
+  .future-illustrative{font-size:9px}
+  .faq-list details p{font-size:13px}
+  .developer-section{min-height:0;padding-block:36px 42px}
+  .developer-composition{gap:20px;padding-top:30px}
+  .identity-role{margin-bottom:13px}
+  .identity-role span:first-child{font-size:12px}
+  .identity-role span:last-child{font-size:10px}
+  .identity-logo{height:68px}
+  .identity-arabic{font-size:13px;margin-top:10px}
+  .identity-detail,.identity-link{font-size:11px;line-height:1.65}
+  .identity-link{margin-top:10px}
+  .closing-copy>p:not(.eyebrow){font-size:13px;line-height:1.85}
+}

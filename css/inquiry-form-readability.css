@@ -1,0 +1,48 @@
+/* Improve readability of the Section 09 inquiry form without changing its layout. */
+.closing-inquiry .closing-copy h2 em{color:var(--gold)}
+.closing-inquiry .contact-form-panel .form-feedback:empty{display:none}
+.closing-inquiry .contact-form-panel h3{font-size:23px}
+.closing-inquiry .contact-form-panel label{font-size:13px}
+.closing-inquiry .contact-form-panel label span{font-size:12px}
+.closing-inquiry .contact-form-panel input,
+.closing-inquiry .contact-form-panel textarea{font-size:15px;line-height:1.7}
+.closing-inquiry .contact-form-panel input::placeholder,
+.closing-inquiry .contact-form-panel textarea::placeholder{font-size:14px}
+.closing-inquiry .contact-form-panel .button{font-size:14px}
+.closing-inquiry .contact-form-panel .button{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  transition:border-color .22s ease,box-shadow .22s ease;
+}
+.closing-inquiry .contact-form-panel .button::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-1px;
+  background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.22) 48%,rgba(255,255,255,.48) 51%,rgba(255,255,255,.18) 54%,transparent 68%);
+  transform:translateX(115%);
+  transition:transform .65s ease;
+  pointer-events:none;
+}
+.closing-inquiry .contact-form-panel .button:hover{
+  background:#183c32;
+  border-color:#c2a36d;
+  color:#f3ecdc;
+  box-shadow:0 0 0 1px rgba(194,163,109,.12);
+  transform:none;
+}
+.closing-inquiry .contact-form-panel .button:hover::before{transform:translateX(-115%)}
+.closing-inquiry .contact-form-panel .button:focus-visible::before{transform:translateX(-115%)}
+.closing-inquiry .contact-form-panel .form-feedback{font-size:11px;line-height:1.7}
+@media(max-width:600px){
+  .closing-inquiry .contact-form-panel h3{font-size:21px}
+  .closing-inquiry .contact-form-panel label{font-size:12px}
+  .closing-inquiry .contact-form-panel label span{font-size:11px}
+  .closing-inquiry .contact-form-panel input,
+  .closing-inquiry .contact-form-panel textarea{font-size:14px}
+  .closing-inquiry .contact-form-panel input::placeholder,
+  .closing-inquiry .contact-form-panel textarea::placeholder{font-size:13px}
+  .closing-inquiry .contact-form-panel .button{font-size:13px}
+  .closing-inquiry .contact-form-panel .form-feedback{font-size:10px}
+}

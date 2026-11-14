@@ -1,0 +1,35 @@
+/* Official Masaken Al Rayan identity in the site header and footer. */
+.nav>.brand{
+  width:160px;
+  min-width:160px;
+  flex:0 0 160px;
+  display:block;
+}
+.masaken-logo{display:block;width:100%;height:auto;object-fit:contain}
+.nav>.brand .masaken-logo-on-image{display:block}
+.nav>.brand .masaken-logo-on-light{display:none}
+.nav.scrolled>.brand .masaken-logo-on-image{display:none}
+.nav.scrolled>.brand .masaken-logo-on-light{display:block}
+.nav nav{gap:24px}
+.nav nav a{font-size:14px;font-weight:500}
+.nav nav a.active::before{content:none}
+.site-footer .footer-identity .footer-brand{
+  width:184px;
+  min-width:0;
+  flex:0 0 auto;
+  padding:0;
+  background:transparent;
+}
+.site-footer .footer-identity>p{margin-top:10px}
+@media(max-width:820px){
+  .nav>.brand{width:145px;min-width:145px;flex-basis:145px}
+  .nav nav a{font-size:23px}
+}
+@media(min-width:821px) and (max-width:1050px){
+  .nav nav{gap:15px}
+  .nav nav a{font-size:12px}
+}
+@media(max-width:600px){
+  .nav>.brand{width:128px;min-width:128px;flex-basis:128px}
+  .site-footer .footer-identity .footer-brand{width:164px;padding:0}
+}
